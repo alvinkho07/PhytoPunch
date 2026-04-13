@@ -83,13 +83,13 @@ export const ProductStore = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className={`grid grid-cols-1 ${products.length === 1 ? 'justify-items-center md:grid-cols-1' : 'md:grid-cols-3'} gap-8`}
         >
           {products.map((product) => (
             <motion.div
               key={product.id}
               variants={itemVariants}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow"
+              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow w-full max-w-md"
             >
               {/* Product Image */}
               <motion.div
