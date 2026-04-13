@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import instaLogo from '../img/insta.png'
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -96,7 +97,9 @@ export const Footer = () => {
               <div className="flex gap-3">
                 <a href="#" className="text-lg hover:text-kombucha-gold transition">f</a>
                 <a href="#" className="text-lg hover:text-kombucha-gold transition">𝕏</a>
-                <a href="#" className="text-lg hover:text-kombucha-gold transition">📷</a>
+                <a href="https://www.instagram.com/p/DWLLLmeE43P/?igsh=MXJ3NTIzaG04eDlkcQ==" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
+                  <img src={instaLogo} alt="Instagram" className="h-6 w-6" />
+                </a>
               </div>
             </div>
           </div>
