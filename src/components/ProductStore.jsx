@@ -145,14 +145,28 @@ export const ProductStore = () => {
               </div>
 
               {/* Add to Cart Button */}
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => handleAddToCart(product, selectedSizes[product.id])}
-                className="w-full bg-kombucha-berry text-white py-3 rounded-lg font-semibold hover:bg-kombucha-green transition"
-              >
-                Add to Cart
-              </motion.button>
+              <div className="space-y-3">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => handleAddToCart(product, selectedSizes[product.id])}
+                  className="w-full bg-kombucha-berry text-white py-3 rounded-lg font-semibold hover:bg-kombucha-green transition"
+                >
+                  Add to Cart
+                </motion.button>
+                {product.instagram && (
+                  <motion.a
+                    href={product.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition flex items-center justify-center gap-2"
+                  >
+                    📷 Instagram
+                  </motion.a>
+                )}
+              </div>
             </motion.div>
           ))}
         </motion.div>
