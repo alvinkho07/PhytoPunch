@@ -25,6 +25,13 @@ export const ProductStore = () => {
       description: 'Honey and turmeric wellness blend',
       image: '🌅',
     },
+    {
+      id: 4,
+      name: 'Fruitypunch Kombucha Gummy',
+      description: 'Functional gummies with natural probiotics and fruity flavor',
+      image: '🍬',
+      instagram: 'https://www.instagram.com/p/DWLLLmeE43P/?igsh=MXJ3NTIzaG04eDlkcQ==',
+    },
   ]
 
   const sizes = [
