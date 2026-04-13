@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-export const Hero = () => {
+export const Hero = ({ onShopClick }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -49,7 +49,9 @@ export const Hero = () => {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex gap-4 pt-4">
-            <button className="bg-kombucha-berry text-white px-8 py-3 rounded-lg font-semibold hover:bg-kombucha-green transition transform hover:scale-105">
+            <button 
+              onClick={onShopClick}
+              className="bg-kombucha-berry text-white px-8 py-3 rounded-lg font-semibold hover:bg-kombucha-green transition transform hover:scale-105">
               Shop Now
             </button>
             <button className="border-2 border-kombucha-berry text-kombucha-berry px-8 py-3 rounded-lg font-semibold hover:bg-kombucha-berry hover:text-white transition">

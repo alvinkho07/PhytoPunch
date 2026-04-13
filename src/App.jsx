@@ -49,7 +49,7 @@ function App() {
         <main>
           {/* Hero Section */}
           <div ref={heroRef}>
-            <Hero />
+            <Hero onShopClick={() => scrollToSection('Products')} />
           </div>
 
           {/* Benefits Section */}
