@@ -9,24 +9,6 @@ export const ProductStore = () => {
   const products = [
     {
       id: 1,
-      name: 'Berry Bliss',
-      description: 'Mixed berry kombucha with natural flavors',
-      image: '🫐',
-    },
-    {
-      id: 2,
-      name: 'Green Garden',
-      description: 'Mint and green tea fermented blend',
-      image: '🌿',
-    },
-    {
-      id: 3,
-      name: 'Golden Sunrise',
-      description: 'Honey and turmeric wellness blend',
-      image: '🌅',
-    },
-    {
-      id: 4,
       name: 'Fruitypunch Kombucha Gummy',
       description: 'Functional gummies with natural probiotics and fruity flavor',
       image: '🍬',
