@@ -3,27 +3,27 @@ import { motion } from 'framer-motion'
 
 export const About = () => {
   const milestones = [
-    { year: '2020', event: 'Phyto Punch founded with a vision' },
-    { year: '2021', event: 'First kombucha gummy batch released' },
-    { year: '2022', event: 'Expanded to 3 signature flavors' },
-    { year: '2023', event: 'Shipped to 50K+ satisfied customers' },
+    { year: '2023', event: 'Company founded by a group of university students' },
+    { year: '2024', event: 'Official product release' },
+    { year: '2025', event: 'Won a regional food innovation award' },
+    { year: '2026', event: 'Expanding flavor varieties and new product launches' },
   ]
 
   const upcomingEvents = [
     {
-      date: 'May 15',
-      title: 'Summer Wellness Festival',
-      description: 'Join us at the local wellness expo',
-    },
-    {
       date: 'June 1',
-      title: 'Product Launch Event',
-      description: 'New flavor announcement & tasting',
+      title: 'Flagship Product Launch',
+      description: 'Introducing our expanded flavor lineup',
     },
     {
-      date: 'July 20',
-      title: 'Community Health Talk',
-      description: 'Fermentation science webinar',
+      date: 'Q3 2026',
+      title: 'Retail Expansion',
+      description: 'New retail partnerships & distribution',
+    },
+    {
+      date: 'Q4 2026',
+      title: 'Innovation Series',
+      description: 'Exciting new functional confectionery products',
     },
   ]
 
@@ -42,12 +42,26 @@ export const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-kombucha-berry">Our Story</span>
             </h2>
-            <p className="text-gray-600 text-lg mb-4 leading-relaxed">
-              Phyto Punch Co. was born from a passion for ancient fermentation traditions and modern wellness. We believe that nature's best remedies deserve better delivery methods.
-            </p>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              By combining the probiotic power of fermented kombucha with the convenience of gummies, we've created something special: a delicious way to transform your health, one gummy at a time.
-            </p>
+            <div className="space-y-4 mb-4">
+              <div>
+                <p className="text-sm font-bold text-kombucha-gold mb-2">Background</p>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  Phyto Punch Co. is a Malaysia-based food manufacturing startup founded by university students with a passion for food innovation and nutrition.
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-bold text-kombucha-gold mb-2">Our Mission</p>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  Making functional nutrition convenient, enjoyable, and part of everyday life through innovative functional confectionery.
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-bold text-kombucha-gold mb-2">Our Vision</p>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  Redefining snacking through science and flavor—delivering portable snacks with genuine health benefits while establishing a premium brand with continuous flavor innovation.
+                </p>
+              </div>
+            </div>
           </div>
           <motion.div
             animate={{ y: [0, 15, 0] }}

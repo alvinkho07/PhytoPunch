@@ -17,9 +17,8 @@ export const Navbar = ({ onCartClick, onNavClick }) => {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold">
-          <span className="text-kombucha-berry">Phyto</span>
-          <span className="text-kombucha-gold"> Punch</span>
+        <div className="text-2xl font-bold h-8 w-32 bg-gradient-to-r from-kombucha-berry to-kombucha-gold rounded-lg flex items-center justify-center text-white text-sm font-bold">
+          LOGO
         </div>
 
         {/* Desktop Navigation */}

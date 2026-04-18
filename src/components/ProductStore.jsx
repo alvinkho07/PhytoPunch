@@ -9,9 +9,9 @@ export const ProductStore = () => {
   const products = [
     {
       id: 1,
-      name: 'Fruitypunch Kombucha Gummy',
-      description: 'Functional gummies with natural probiotics and fruity flavor',
-      image: '🍬',
+      name: 'Grape Kombucha Gummy',
+      description: 'Functional gummies with natural probiotics and refreshing grape flavor',
+      image: '🍇',
       instagram: 'https://www.instagram.com/p/DWLLLmeE43P/?igsh=MXJ3NTIzaG04eDlkcQ==',
     },
   ]
