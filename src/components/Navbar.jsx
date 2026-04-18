@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useCart } from '../context/CartContext'
+import Logo from '../img/Logo.png'
 
 export const Navbar = ({ onCartClick, onNavClick }) => {
   const { getTotalItems } = useCart()
@@ -17,9 +18,7 @@ export const Navbar = ({ onCartClick, onNavClick }) => {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold h-8 w-32 bg-gradient-to-r from-kombucha-berry to-kombucha-gold rounded-lg flex items-center justify-center text-white text-sm font-bold">
-          LOGO
-        </div>
+        <img src={Logo} alt="Phyto Punch Logo" className="h-10 w-auto" />
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-8 items-center">

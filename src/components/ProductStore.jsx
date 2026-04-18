@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useCart } from '../context/CartContext'
+import GummyImage from '../img/Kombucha-based Gummy.png'
 
 export const ProductStore = () => {
   const { addToCart } = useCart()
@@ -11,7 +12,8 @@ export const ProductStore = () => {
       id: 1,
       name: 'Grape Kombucha Gummy',
       description: 'Functional gummies with natural probiotics and refreshing grape flavor',
-      image: '🍇',
+      image: GummyImage,
+      isImageFile: true,
       instagram: 'https://www.instagram.com/p/DWLLLmeE43P/?igsh=MXJ3NTIzaG04eDlkcQ==',
     },
   ]
@@ -95,9 +97,13 @@ export const ProductStore = () => {
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="text-7xl mb-6 text-center"
+                className="mb-6 text-center"
               >
-                {product.image}
+                {product.isImageFile ? (
+                  <img src={product.image} alt={product.name} className="w-full h-auto max-w-xs mx-auto" />
+                ) : (
+                  <div className="text-7xl">{product.image}</div>
+                )}
               </motion.div>
 
               <h3 className="text-2xl font-bold text-kombucha-berry mb-2">{product.name}</h3>
