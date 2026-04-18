@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import GummyImage from '../img/gummy.png'
 
-export const Hero = ({ onShopClick }) => {
+export const Hero = ({ onShopClick, onLearnMoreClick }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -50,14 +50,20 @@ export const Hero = ({ onShopClick }) => {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex gap-4 pt-4">
-            <button 
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={onShopClick}
-              className="bg-kombucha-berry text-white px-8 py-3 rounded-lg font-semibold hover:bg-kombucha-green transition transform hover:scale-105">
+              className="bg-kombucha-berry text-white px-8 py-3 rounded-lg font-semibold hover:bg-kombucha-green transition transform">
               Shop Now
-            </button>
-            <button className="border-2 border-kombucha-berry text-kombucha-berry px-8 py-3 rounded-lg font-semibold hover:bg-kombucha-berry hover:text-white transition">
+            </motion.button>
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={onLearnMoreClick}
+              className="border-2 border-kombucha-berry text-kombucha-berry px-8 py-3 rounded-lg font-semibold hover:bg-kombucha-berry hover:text-white transition">
               Learn More
-            </button>
+            </motion.button>
           </motion.div>
         </motion.div>
 

@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import { motion } from 'framer-motion'
 import { CartProvider } from './context/CartContext'
 import {
   Navbar,
@@ -13,6 +14,7 @@ import {
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false)
+  const [highlightSection, setHighlightSection] = useState(null)
   
   // Section refs for smooth scrolling
   const heroRef = useRef(null)
@@ -32,6 +34,10 @@ function App() {
 
     const targetRef = refs[section]
     if (targetRef && targetRef.current) {
+      // Trigger highlight animation
+      setHighlightSection(section)
+      setTimeout(() => setHighlightSection(null), 2000)
+      
       targetRef.current.scrollIntoView({ behavior: 'smooth' })
     }
   }
@@ -49,7 +55,10 @@ function App() {
         <main>
           {/* Hero Section */}
           <div ref={heroRef}>
-            <Hero onShopClick={() => scrollToSection('Products')} />
+            <Hero 
+              onShopClick={() => scrollToSection('Products')}
+              onLearnMoreClick={() => scrollToSection('About')}
+            />
           </div>
 
           {/* Benefits Section */}
@@ -62,10 +71,27 @@ function App() {
             <ProductStore />
           </div>
 
-          {/* About Section */}
-          <div ref={aboutRef}>
+          {/* About Section with Highlight */}
+          <motion.div
+            ref={aboutRef}
+            animate={
+              highlightSection === 'About'
+                ? {
+                    boxShadow: [
+                      'inset 0 0 0 0px rgba(206, 84, 156, 0)',
+                      'inset 0 0 0 3px rgba(206, 84, 156, 0.5)',
+                      'inset 0 0 0 0px rgba(206, 84, 156, 0)',
+                    ],
+                  }
+                : {}
+            }
+            transition={{
+              duration: 2,
+              ease: 'easeInOut',
+            }}
+          >
             <About />
-          </div>
+          </motion.div>
 
           {/* FAQ Section */}
           <div ref={faqRef}>

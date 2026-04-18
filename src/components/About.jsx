@@ -1,13 +1,34 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { ExpandableTimeline } from './ExpandableTimeline'
 import Logo from '../img/Logo.png'
 
 export const About = () => {
   const milestones = [
-    { year: '2023', event: 'Company founded by a group of university students' },
-    { year: '2024', event: 'Official product release' },
-    { year: '2025', event: 'Won a regional food innovation award' },
-    { year: '2026', event: 'Expanding flavor varieties and new product launches' },
+    {
+      year: '2023',
+      event: 'Company founded by a group of university students',
+      storyDescription: 'A passion project born in a university lab where four food science students discovered the perfect formula for fermented gummies. Working late nights between classes, they perfected their first batch of kombucha-based gummies.',
+      highlights: ['Lab Discovery', 'First Recipe', 'Founder Team'],
+    },
+    {
+      year: '2024',
+      event: 'Official product release',
+      storyDescription: 'After months of rigorous testing and refinement, Phyto Punch officially launched their flagship Grape Kombucha Gummies to the market. The initial production run sold out in just 3 weeks!',
+      highlights: ['Market Launch', 'Sold Out', 'First Customers'],
+    },
+    {
+      year: '2025',
+      event: 'Won a regional food innovation award',
+      storyDescription: 'Recognized for their innovative approach to functional confectionery, the team received prestigious awards from multiple regional organizations. This validation sparked expansion plans and attracted industry partnerships.',
+      highlights: ['Award Winner', 'Industry Recognition', 'New Partnerships'],
+    },
+    {
+      year: '2026',
+      event: 'Expanding flavor varieties and new product launches',
+      storyDescription: 'Building on their success, Phyto Punch is expanding with new flavors and complementary products. The team is now working on tropical, berry, and herbal blends to meet growing demand.',
+      highlights: ['New Flavors', 'Product Line', 'Growth Phase'],
+    },
   ]
 
   const upcomingEvents = [
@@ -81,27 +102,8 @@ export const About = () => {
           viewport={{ once: true }}
         >
           <h3 className="text-3xl font-bold text-kombucha-berry mb-12 text-center">Our Journey</h3>
-          <div className="space-y-6">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`flex gap-6 items-center ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}
-              >
-                <div className="flex-1">
-                  <div className="text-right">
-                    <p className="text-lg font-bold text-kombucha-gold">{milestone.year}</p>
-                    <p className="text-gray-600">{milestone.event}</p>
-                  </div>
-                </div>
-                <div className="w-4 h-4 bg-kombucha-berry rounded-full flex-shrink-0"></div>
-                <div className="flex-1"></div>
-              </motion.div>
-            ))}
-          </div>
+          <p className="text-center text-gray-600 mb-8">Click on each milestone to discover our story</p>
+          <ExpandableTimeline milestones={milestones} />
         </motion.div>
 
         {/* Upcoming Events */}
