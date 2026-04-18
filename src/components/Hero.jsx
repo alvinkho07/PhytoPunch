@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import GummyImage from '../img/gummy.png'
+import InstaLogo from '../img/insta.png'
 
 export const Hero = ({ onShopClick, onLearnMoreClick }) => {
   const containerVariants = {
@@ -49,7 +50,7 @@ export const Hero = ({ onShopClick, onLearnMoreClick }) => {
             Harness the power of fermented kombucha in delicious, chewable gummies. Packed with probiotics, antioxidants, and natural energy to elevate your wellness routine.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex gap-4 pt-4">
+          <motion.div variants={itemVariants} className="flex gap-4 pt-4 flex-wrap">
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -64,6 +65,17 @@ export const Hero = ({ onShopClick, onLearnMoreClick }) => {
               className="border-2 border-kombucha-berry text-kombucha-berry px-8 py-3 rounded-lg font-semibold hover:bg-kombucha-berry hover:text-white transition">
               Learn More
             </motion.button>
+            <motion.a
+              href="https://www.instagram.com/p/DWLLLmeE43P/?igsh=MXJ3NTIzaG04eDlkcQ=="
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 border-2 border-pink-500 text-pink-500 px-8 py-3 rounded-lg font-semibold hover:bg-pink-500 hover:text-white transition"
+            >
+              <img src={InstaLogo} alt="Instagram" className="w-5 h-5" />
+              Follow Us
+            </motion.a>
           </motion.div>
         </motion.div>
 
