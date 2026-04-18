@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import Logo from '../img/Logo.png'
 
 export const About = () => {
   const milestones = [
@@ -66,9 +67,9 @@ export const About = () => {
           <motion.div
             animate={{ y: [0, 15, 0] }}
             transition={{ duration: 4, repeat: Infinity }}
-            className="text-9xl text-center opacity-50"
+            className="flex items-center justify-center"
           >
-            🌿
+            <img src={Logo} alt="Phyto Punch" className="w-64 h-auto" />
           </motion.div>
         </motion.div>
 

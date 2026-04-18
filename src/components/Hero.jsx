@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import GummyImage from '../img/Kombucha-based Gummy.png'
 
 export const Hero = ({ onShopClick }) => {
   const containerVariants = {
@@ -73,8 +74,8 @@ export const Hero = ({ onShopClick }) => {
             {/* Gummy Bottle Visual */}
             <div className="w-full h-full bg-gradient-to-br from-kombucha-berry to-kombucha-green rounded-3xl shadow-2xl flex items-center justify-center relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
-              <div className="relative z-10 text-center">
-                <div className="text-6xl mb-2">🍇</div>
+              <div className="text-center">
+                <img src={GummyImage} alt="Premium Gummies" className="w-32 h-32 object-contain mx-auto mb-2" />
                 <p className="text-white font-bold text-lg">Premium Gummies</p>
               </div>
             </div>
