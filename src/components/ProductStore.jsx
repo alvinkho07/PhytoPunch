@@ -126,7 +126,7 @@ export const ProductStore = () => {
                       }`}
                     >
                       <div>{size.label}</div>
-                      <div className="text-xs mt-1">${size.price}</div>
+                      <div className="text-xs mt-1">RM{size.price}</div>
                     </motion.button>
                   ))}
                 </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import GummyImage from '../img/Kombucha-based Gummy.png'
+import GummyImage from '../img/gummy.png'
 
 export const Hero = ({ onShopClick }) => {
   const containerVariants = {
