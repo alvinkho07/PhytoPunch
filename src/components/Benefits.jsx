@@ -154,7 +154,7 @@ export const Benefits = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center mt-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center mt-8 md:mx-auto md:max-w-2xl"
         >
           {benefits.slice(3).map((benefit, index) => (
             <motion.div
