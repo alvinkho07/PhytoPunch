@@ -131,7 +131,7 @@ export const ProductStore = () => {
             <motion.div
               key={product.id}
               variants={itemVariants}
-              className={`relative p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all w-full ${
+              className={`relative p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all w-full min-h-min flex flex-col ${
                 product.available
                   ? 'bg-white'
                   : 'bg-gradient-to-br from-gray-50 to-gray-100 opacity-90'
@@ -142,13 +142,13 @@ export const ProductStore = () => {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="absolute top-4 right-4 bg-kombucha-gold text-white px-3 py-1 rounded-full text-xs font-bold"
+                  className="absolute top-4 right-4 bg-kombucha-gold text-white px-3 py-1 rounded-full text-xs font-bold z-10"
                 >
                   Coming Soon
                 </motion.div>
               )}
 
-              {/* Product Image */}
+              {/* Product Image Container - Fixed Aspect Ratio */}
               <motion.div
                 animate={
                   product.available
@@ -156,21 +156,23 @@ export const ProductStore = () => {
                     : { opacity: [1, 0.7, 1] }
                 }
                 transition={{ duration: 3, repeat: Infinity }}
-                className={`mb-6 text-center ${!product.available ? 'opacity-60' : ''}`}
+                className="mb-6 w-full aspect-square rounded-xl overflow-hidden flex items-center justify-center"
               >
                 {product.isImageFile ? (
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-auto max-w-xs mx-auto"
+                    className="w-full h-full object-cover"
                   />
                 ) : (
-                  <div className="text-7xl">{product.image}</div>
+                  <div className="w-full h-full bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center rounded-xl">
+                    <span className="text-6xl drop-shadow-sm">{product.image}</span>
+                  </div>
                 )}
               </motion.div>
 
               <h3
-                className={`text-2xl font-bold mb-2 ${
+                className={`text-2xl font-bold mb-2 line-clamp-2 ${
                   product.available
                     ? 'text-kombucha-berry'
                     : 'text-gray-600'
@@ -178,7 +180,7 @@ export const ProductStore = () => {
               >
                 {product.name}
               </h3>
-              <p className={`mb-6 ${product.available ? 'text-gray-600' : 'text-gray-500'}`}>
+              <p className={`mb-6 text-sm leading-relaxed flex-grow min-h-20 ${product.available ? 'text-gray-600' : 'text-gray-500'}`}>
                 {product.description}
               </p>
 
