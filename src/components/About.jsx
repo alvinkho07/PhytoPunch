@@ -33,19 +33,19 @@ export const About = () => {
 
   const upcomingEvents = [
     {
-      date: 'June 1',
-      title: 'Flagship Product Launch',
-      description: 'Introducing our expanded flavor lineup',
+      date: 'July 15, 2026',
+      title: 'Malaysian International Food & Beverage Trade Fair (MIFB)',
+      description: 'Showcasing our Kombucha Gummies to industry professionals and retailers',
     },
     {
-      date: 'Q3 2026',
-      title: 'Retail Expansion',
-      description: 'New retail partnerships & distribution',
+      date: 'July 21-23, 2026',
+      title: 'Food & Drinks Malaysia by SIAL',
+      description: 'Largest food & beverage trade show in Southeast Asia',
     },
     {
-      date: 'Q4 2026',
-      title: 'Innovation Series',
-      description: 'Exciting new functional confectionery products',
+      date: 'Sept 10-12, 2026',
+      title: 'ASEAN Food & Beverage Exhibition',
+      description: 'Connecting with regional distributors and B2B partners',
     },
   ]
 
@@ -68,7 +68,7 @@ export const About = () => {
               <div>
                 <p className="text-sm font-bold text-kombucha-gold mb-2">Background</p>
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  Phyto Punch Co. is a Malaysia-based food manufacturing startup founded by university students with a passion for food innovation and nutrition.
+                  Phyto Punch Co. is a Malaysia-based food manufacturing startup founded by TARUMT food science students with a passion for food innovation and nutrition.
                 </p>
               </div>
               <div>
@@ -80,7 +80,7 @@ export const About = () => {
               <div>
                 <p className="text-sm font-bold text-kombucha-gold mb-2">Our Vision</p>
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  Redefining snacking through science and flavor—delivering portable snacks with genuine health benefits while establishing a premium brand with continuous flavor innovation.
+                  Redefining snacking through science and flavour, delivering portable snacks with genuine health benefits while establishing a premium brand with continuous flavour innovation.
                 </p>
               </div>
             </div>

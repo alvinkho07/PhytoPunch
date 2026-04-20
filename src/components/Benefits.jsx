@@ -21,20 +21,6 @@ export const Benefits = () => {
       },
     },
     {
-      icon: '⚡',
-      title: 'Natural Energy',
-      description: 'B vitamins and natural caffeine from kombucha',
-      details: {
-        fullTitle: 'Natural Energy Boost',
-        breakdown: [
-          { label: 'B-Vitamins', value: '100%+ DV', description: 'B1, B2, B3, B5, B6, B12 blend' },
-          { label: 'Caffeine', value: '15-30mg', description: 'Natural caffeine from kombucha fermentation' },
-          { label: 'Energy Release', value: 'Sustained', description: 'No crash, gradual energy delivery' },
-        ],
-        benefits: ['Boosts mental clarity', 'Increases physical endurance', 'No jitters or crashes', 'All-day sustained energy'],
-      },
-    },
-    {
       icon: '🛡️',
       title: 'Antioxidants',
       description: 'Powerful antioxidants to combat oxidative stress',
@@ -50,10 +36,10 @@ export const Benefits = () => {
     },
     {
       icon: '🍃',
-      title: 'Organic Ingredients',
+      title: 'Natural Ingredients',
       description: 'Pure, natural, and sustainably sourced ingredients',
       details: {
-        fullTitle: 'Certified Organic Sourcing',
+        fullTitle: 'Certified Natural Sourcing',
         breakdown: [
           { label: 'Certification', value: 'USDA Organic', description: 'Third-party verified organic ingredients' },
           { label: 'Sugar Content', value: '3g per serving', description: 'Low glycemic impact gummies' },
@@ -138,14 +124,14 @@ export const Benefits = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:auto-rows-max justify-items-center"
         >
-          {benefits.map((benefit, index) => (
+          {benefits.slice(0, 3).map((benefit, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
               whileHover={{ y: -5, transition: { duration: 0.3 } }}
-              className="bg-kombucha-cream p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow"
+              className="bg-kombucha-cream p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow w-full max-w-sm"
             >
               <div className="text-5xl mb-4">{benefit.icon}</div>
               <h3 className="text-xl font-bold text-kombucha-berry mb-2">{benefit.title}</h3>
@@ -154,6 +140,36 @@ export const Benefits = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedBenefit(index)}
+                className="text-kombucha-berry font-semibold hover:text-kombucha-green transition"
+              >
+                Learn More →
+              </motion.button>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Second Row - Centered */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center mt-8"
+        >
+          {benefits.slice(3).map((benefit, index) => (
+            <motion.div
+              key={index + 3}
+              variants={itemVariants}
+              whileHover={{ y: -5, transition: { duration: 0.3 } }}
+              className="bg-kombucha-cream p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow w-full max-w-sm"
+            >
+              <div className="text-5xl mb-4">{benefit.icon}</div>
+              <h3 className="text-xl font-bold text-kombucha-berry mb-2">{benefit.title}</h3>
+              <p className="text-gray-600 mb-4">{benefit.description}</p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setSelectedBenefit(index + 3)}
                 className="text-kombucha-berry font-semibold hover:text-kombucha-green transition"
               >
                 Learn More →

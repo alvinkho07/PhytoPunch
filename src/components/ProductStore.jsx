@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { useCart } from '../context/CartContext'
 import GummyImage from '../img/Kombucha-based Gummy.png'
 
 export const ProductStore = () => {
   const { addToCart } = useCart()
-  const [selectedSizes, setSelectedSizes] = useState({})
 
   const products = [
     {
@@ -14,29 +13,70 @@ export const ProductStore = () => {
       description: 'Functional gummies with natural probiotics and refreshing grape flavor',
       image: GummyImage,
       isImageFile: true,
-      instagram: 'https://www.instagram.com/p/DWLLLmeE43P/?igsh=MXJ3NTIzaG04eDlkcQ==',
+      price: 19.99,
+      available: true,
+    },
+    {
+      id: 2,
+      name: 'Strawberry Bliss',
+      description: 'Tangy strawberry with kombucha cultures and vitamin C boost',
+      image: '🍓',
+      isImageFile: false,
+      price: 19.99,
+      available: false,
+      releaseDate: 'Q2 2026',
+    },
+    {
+      id: 3,
+      name: 'Tropical Fusion',
+      description: 'Mango, pineapple & passion fruit blend with electrolytes',
+      image: '🥭',
+      isImageFile: false,
+      price: 19.99,
+      available: false,
+      releaseDate: 'Q3 2026',
+    },
+    {
+      id: 4,
+      name: 'Berry Immune',
+      description: 'Blackberry & blueberry superblend with extra probiotics',
+      image: '🫐',
+      isImageFile: false,
+      price: 19.99,
+      available: false,
+      releaseDate: 'Q3 2026',
+    },
+    {
+      id: 5,
+      name: 'Herbal Zen',
+      description: 'Green tea, ginger & honey with calming chamomile notes',
+      image: '🌿',
+      isImageFile: false,
+      price: 19.99,
+      available: false,
+      releaseDate: 'Q4 2026',
+    },
+    {
+      id: 6,
+      name: 'Citrus Energy',
+      description: 'Lemon, orange & lime with natural B-vitamins',
+      image: '🍋',
+      isImageFile: false,
+      price: 19.99,
+      available: false,
+      releaseDate: 'Q4 2026',
     },
   ]
 
-  const sizes = [
-    { label: 'Small', value: 'small', price: 9.99, description: '30 gummies' },
-    { label: 'Medium', value: 'medium', price: 16.99, description: '60 gummies' },
-    { label: 'Large', value: 'large', price: 24.99, description: '100 gummies' },
-  ]
-
-  const handleAddToCart = (product, size) => {
-    if (!size) {
-      alert('Please select a size')
-      return
-    }
-    const sizeInfo = sizes.find((s) => s.value === size)
+  const handleAddToCart = (product) => {
     addToCart({
-      ...product,
-      size,
-      price: sizeInfo.price,
-      description: sizeInfo.description,
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      description: `${product.description} - 60 gummies`,
+      image: product.image,
+      isImageFile: product.isImageFile,
     })
-    setSelectedSizes({ ...selectedSizes, [product.id]: null })
     alert('Added to cart!')
   }
 
@@ -45,7 +85,7 @@ export const ProductStore = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   }
@@ -75,7 +115,7 @@ export const ProductStore = () => {
             <span className="text-kombucha-green"> Flavors</span>
           </h2>
           <p className="text-gray-600 text-lg">
-            Choose your favorite fermented flavor and pack size.
+            Choose your favorite fermented flavor. Each pack contains 60 delicious gummies.
           </p>
         </motion.div>
 
@@ -85,66 +125,141 @@ export const ProductStore = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className={`grid grid-cols-1 ${products.length === 1 ? 'justify-items-center md:grid-cols-1' : 'md:grid-cols-3'} gap-8`}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {products.map((product) => (
             <motion.div
               key={product.id}
               variants={itemVariants}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow w-full max-w-md"
+              className={`relative p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all w-full ${
+                product.available
+                  ? 'bg-white'
+                  : 'bg-gradient-to-br from-gray-50 to-gray-100 opacity-90'
+              }`}
             >
+              {/* Coming Soon Badge */}
+              {!product.available && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute top-4 right-4 bg-kombucha-gold text-white px-3 py-1 rounded-full text-xs font-bold"
+                >
+                  Coming Soon
+                </motion.div>
+              )}
+
               {/* Product Image */}
               <motion.div
-                animate={{ scale: [1, 1.05, 1] }}
+                animate={
+                  product.available
+                    ? { scale: [1, 1.05, 1] }
+                    : { opacity: [1, 0.7, 1] }
+                }
                 transition={{ duration: 3, repeat: Infinity }}
-                className="mb-6 text-center"
+                className={`mb-6 text-center ${!product.available ? 'opacity-60' : ''}`}
               >
                 {product.isImageFile ? (
-                  <img src={product.image} alt={product.name} className="w-full h-auto max-w-xs mx-auto" />
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-auto max-w-xs mx-auto"
+                  />
                 ) : (
                   <div className="text-7xl">{product.image}</div>
                 )}
               </motion.div>
 
-              <h3 className="text-2xl font-bold text-kombucha-berry mb-2">{product.name}</h3>
-              <p className="text-gray-600 mb-6">{product.description}</p>
+              <h3
+                className={`text-2xl font-bold mb-2 ${
+                  product.available
+                    ? 'text-kombucha-berry'
+                    : 'text-gray-600'
+                }`}
+              >
+                {product.name}
+              </h3>
+              <p className={`mb-6 ${product.available ? 'text-gray-600' : 'text-gray-500'}`}>
+                {product.description}
+              </p>
 
-              {/* Size Selection */}
-              <div className="space-y-3 mb-6">
-                <label className="block text-sm font-semibold text-kombucha-berry">Size</label>
-                <div className="grid grid-cols-3 gap-2">
-                  {sizes.map((size) => (
-                    <motion.button
-                      key={size.value}
-                      onClick={() => setSelectedSizes({ ...selectedSizes, [product.id]: size.value })}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`p-3 rounded-lg transition font-medium text-sm ${
-                        selectedSizes[product.id] === size.value
-                          ? 'bg-kombucha-berry text-white'
-                          : 'bg-kombucha-light text-kombucha-berry border border-kombucha-berry/30'
-                      }`}
-                    >
-                      <div>{size.label}</div>
-                      <div className="text-xs mt-1">RM{size.price}</div>
-                    </motion.button>
-                  ))}
-                </div>
+              {/* Price & Release Date */}
+              <div className="mb-6">
+                {product.available ? (
+                  <div className="text-3xl font-bold text-kombucha-green">
+                    RM{product.price.toFixed(2)}
+                  </div>
+                ) : (
+                  <div className="space-y-1">
+                    <p className="text-sm text-gray-500">
+                      Coming <span className="font-bold text-kombucha-gold">{product.releaseDate}</span>
+                    </p>
+                    <p className="text-2xl font-bold text-gray-400">
+                      RM{product.price.toFixed(2)}
+                    </p>
+                  </div>
+                )}
               </div>
 
-              {/* Action Buttons */}
-              <div className="space-y-3">
+              {/* Action Button */}
+              {product.available ? (
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => handleAddToCart(product, selectedSizes[product.id])}
+                  onClick={() => handleAddToCart(product)}
                   className="w-full bg-kombucha-berry text-white py-3 rounded-lg font-semibold hover:bg-kombucha-green transition"
                 >
                   Add to Cart
                 </motion.button>
-              </div>
+              ) : (
+                <motion.button
+                  disabled
+                  className="w-full bg-gray-300 text-gray-600 py-3 rounded-lg font-semibold cursor-not-allowed"
+                >
+                  Coming Soon
+                </motion.button>
+              )}
+
+              {/* Coming Soon Message */}
+              {!product.available && (
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-xs text-gray-500 text-center mt-4"
+                >
+                  🚀 Part of our exciting future projects lineup
+                </motion.p>
+              )}
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Future Projects Info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-16 p-8 bg-white rounded-2xl shadow-lg border-2 border-kombucha-gold/30"
+        >
+          <h3 className="text-2xl font-bold text-kombucha-berry mb-4">🌟 Future Innovations</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            We're constantly innovating and expanding our product line. Our pipeline includes exciting new flavors, functional blends, and wellness-focused formulations designed to meet diverse health goals.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span className="inline-block bg-kombucha-cream text-kombucha-berry px-4 py-2 rounded-full text-sm font-semibold">
+              ✨ New Flavors
+            </span>
+            <span className="inline-block bg-kombucha-cream text-kombucha-berry px-4 py-2 rounded-full text-sm font-semibold">
+              🧬 Science-Backed
+            </span>
+            <span className="inline-block bg-kombucha-cream text-kombucha-berry px-4 py-2 rounded-full text-sm font-semibold">
+              💪 Functional Benefits
+            </span>
+            <span className="inline-block bg-kombucha-cream text-kombucha-berry px-4 py-2 rounded-full text-sm font-semibold">
+              🌱 Sustainable
+            </span>
+          </div>
         </motion.div>
       </div>
     </section>
