@@ -25,7 +25,7 @@ function App() {
 
   const scrollToSection = (section) => {
     const refs = {
-      Hero: heroRef,
+      Home: heroRef,
       Benefits: benefitsRef,
       Products: productsRef,
       About: aboutRef,

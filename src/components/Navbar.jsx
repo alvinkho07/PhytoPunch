@@ -7,7 +7,7 @@ export const Navbar = ({ onCartClick, onNavClick }) => {
   const { getTotalItems } = useCart()
   const [isOpen, setIsOpen] = useState(false)
 
-  const navItems = ['Hero', 'Benefits', 'Products', 'About', 'FAQ']
+  const navItems = ['Home', 'Benefits', 'Products', 'About', 'FAQ']
 
   return (
     <motion.nav
