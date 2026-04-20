@@ -55,7 +55,7 @@ export const Cart = ({ isOpen, onClose }) => {
               </div>
 
               {/* Cart Items */}
-              {cart.length === 0 ? (
+              {!cart || cart.length === 0 ? (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -66,7 +66,7 @@ export const Cart = ({ isOpen, onClose }) => {
                 </motion.div>
               ) : (
                 <motion.div className="space-y-4">
-                  {cart?.map((item, index) => (
+                  {(cart || []).map((item, index) => (
                     <motion.div
                       key={`${item?.id}-${item?.size}-${index}`}
                       initial={{ opacity: 0, x: 20 }}

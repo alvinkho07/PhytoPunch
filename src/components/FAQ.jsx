@@ -6,36 +6,36 @@ export const FAQ = () => {
 
   const faqs = [
     {
-      question: 'Are your gummies vegan?',
-      answer: 'Yes! Our gummies are 100% vegan and made with pectin instead of gelatin. They\'re also free from artificial colors and flavors.',
+      question: '🛒 Where can I buy Phyto Punch products?',
+      answer: 'Phyto Punch is available through multiple channels for your convenience: our official website, Shopee, Lazada, TikTok Shop, Watsons Malaysia, and Guardian Malaysia. Find the option that works best for you!',
     },
     {
-      question: 'How many probiotics are in each gummy?',
-      answer: 'Each gummy contains 1 billion CFUs of live probiotic cultures. We recommend taking 2-3 gummies daily for optimal digestive benefits.',
+      question: '📦 What are the shipping and delivery times?',
+      answer: 'Delivery fees are calculated at checkout based on your location. Local delivery in Malaysia typically takes 2–5 business days, while international orders take 5–10 business days. We ensure your gummies arrive fresh and intact.',
     },
     {
-      question: 'Do they contain sugar?',
-      answer: 'Our gummies are sweetened with organic cane sugar and stevia. Each serving (3 gummies) contains 3g of sugar—significantly lower than most gummy supplements.',
+      question: '💳 What payment methods do you accept?',
+      answer: 'We accept multiple payment options for your convenience: Credit/Debit cards, Online Banking, and E-wallets. Choose whichever payment method is most convenient for you at checkout.',
     },
     {
-      question: 'What\'s the shipping time?',
-      answer: 'Orders ship within 1-2 business days. Standard shipping takes 5-7 business days. We offer free shipping on orders over $50!',
+      question: '🏠 How should I store my Phyto Punch gummies?',
+      answer: 'Store your gummies in a cool, dry place away from direct sunlight. This ensures optimal freshness and potency. While they don\'t require refrigeration, keeping them in a cool environment extends shelf life.',
     },
     {
-      question: 'Do they need to be refrigerated?',
-      answer: 'While our gummies can be stored at room temperature, refrigeration extends shelf life. Store in a cool, dry place away from direct sunlight.',
+      question: '⚠️ Are there any side effects I should know about?',
+      answer: 'Phyto Punch gummies are safe as directed. Excessive intake may cause mild digestive discomfort in some individuals. If you are pregnant or have specific health concerns, we recommend consulting a healthcare professional before use.',
     },
     {
-      question: 'What if I\'m allergic to certain ingredients?',
-      answer: 'All our products are allergen-friendly and free from common allergens. Check the ingredient list on each package or contact us for detailed allergy information.',
+      question: '💊 Can I take Phyto Punch with other supplements?',
+      answer: 'Yes, Phyto Punch can generally be taken with other supplements. However, be mindful of overlapping ingredients to avoid exceeding recommended daily values. When in doubt, consult your healthcare provider or contact us for specific guidance.',
     },
     {
-      question: 'Can I return my order?',
-      answer: 'Yes! We offer a 30-day money-back guarantee on all orders. If you\'re not satisfied, we\'ll refund you no questions asked.',
+      question: '📞 How can I contact customer support?',
+      answer: 'We\'re here to help! Reach out to us via Email at support@phytopunch.com or connect with us on Instagram @PhytoPunchCo. Our wellness team is ready to answer any questions about our products.',
     },
     {
-      question: 'Are there any side effects?',
-      answer: 'As with any probiotic supplement, some users may experience minor digestive adjustments initially. These typically subside within a few days as your gut adapts.',
+      question: '❓ Do you have a FAQ for product details?',
+      answer: 'Absolutely! Each product page includes detailed ingredient lists, usage instructions, and nutritional information. For questions not covered here, feel free to contact our support team via email or Instagram.',
     },
   ]
 
@@ -124,10 +124,21 @@ export const FAQ = () => {
           className="mt-16 text-center bg-kombucha-berry text-white p-8 rounded-xl"
         >
           <h3 className="text-2xl font-bold mb-4">Still have questions?</h3>
-          <p className="mb-6">Reach out to our wellness team at support@phytopunch.com</p>
-          <button className="bg-white text-kombucha-berry px-8 py-2 rounded-lg font-bold hover:bg-kombucha-light transition">
-            Contact Us
-          </button>
+          <p className="mb-2 text-white/90">Reach out to our wellness team:</p>
+          <div className="space-y-2">
+            <p className="text-lg font-semibold">📧 support@phytopunch.com</p>
+            <p className="text-white/80">or connect with us on Instagram</p>
+          </div>
+          <div className="mt-6">
+            <a
+              href="https://www.instagram.com/PhytoPunchCo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-kombucha-berry px-8 py-2 rounded-lg font-bold hover:bg-kombucha-light transition"
+            >
+              @PhytoPunchCo
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

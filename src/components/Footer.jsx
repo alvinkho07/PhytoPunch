@@ -1,6 +1,5 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import instaLogo from '../img/insta.png'
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -56,11 +55,21 @@ export const Footer = () => {
             viewport={{ once: true }}
           >
             <h4 className="font-bold text-lg mb-4">Support</h4>
-            <ul className="space-y-2 text-sm text-white/80">
-              <li><a href="#" className="hover:text-kombucha-gold transition">Contact Us</a></li>
+            <ul className="space-y-3 text-sm text-white/80">
+              <li>
+                <a href="mailto:support@phytopunch.com" className="hover:text-kombucha-gold transition flex items-center gap-2">
+                  <span>📧</span>
+                  <span>support@phytopunch.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/PhytoPunchCo" target="_blank" rel="noopener noreferrer" className="hover:text-kombucha-gold transition flex items-center gap-2">
+                  <span>📱</span>
+                  <span>@PhytoPunchCo</span>
+                </a>
+              </li>
               <li><a href="#" className="hover:text-kombucha-gold transition">Shipping Info</a></li>
               <li><a href="#" className="hover:text-kombucha-gold transition">Returns</a></li>
-              <li><a href="#" className="hover:text-kombucha-gold transition">Track Order</a></li>
             </ul>
           </motion.div>
 
@@ -94,11 +103,12 @@ export const Footer = () => {
             <div className="flex gap-6 mt-4 md:mt-0">
               <a href="#" className="hover:text-kombucha-gold transition">Privacy Policy</a>
               <a href="#" className="hover:text-kombucha-gold transition">Terms of Service</a>
-              <div className="flex gap-3">
-                <a href="#" className="text-lg hover:text-kombucha-gold transition">f</a>
-                <a href="#" className="text-lg hover:text-kombucha-gold transition">𝕏</a>
-                <a href="https://www.instagram.com/p/DWLLLmeE43P/?igsh=MXJ3NTIzaG04eDlkcQ==" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition">
-                  <img src={instaLogo} alt="Instagram" className="h-6 w-6" />
+              <div className="flex gap-4">
+                <a href="https://www.instagram.com/PhytoPunchCo" target="_blank" rel="noopener noreferrer" className="hover:text-kombucha-gold transition" title="Follow us on Instagram">
+                  📱
+                </a>
+                <a href="mailto:support@phytopunch.com" className="hover:text-kombucha-gold transition" title="Email us">
+                  📧
                 </a>
               </div>
             </div>
