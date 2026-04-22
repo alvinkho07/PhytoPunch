@@ -41,7 +41,7 @@ export const Benefits = () => {
       details: {
         fullTitle: 'Certified Natural Sourcing',
         breakdown: [
-          { label: 'Certification', value: 'USDA Certified', description: 'Third-party verified natural ingredients' },
+          { label: 'Source Quality', value: 'Premium Natural', description: 'High-quality natural ingredients from trusted suppliers' },
           { label: 'Sugar Content', value: '3g per serving', description: 'Low glycemic impact gummies' },
           { label: 'GMO-Free', value: '100%', description: 'No genetically modified organisms' },
         ],

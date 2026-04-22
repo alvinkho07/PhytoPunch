@@ -45,7 +45,7 @@ export const Hero = ({ onShopClick, onLearnMoreClick }) => {
             variants={itemVariants}
             className="text-lg text-gray-600 leading-relaxed"
           >
-            Harness the power of fermented kombucha in delicious, chewable gummies. Packed with probiotics, antioxidants, and natural energy to elevate your wellness routine.
+            Harness the power of fermented kombucha in delicious, chewable gummies. Packed with probiotics and antioxidants to elevate your wellness routine.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex gap-4 pt-4 flex-wrap">
