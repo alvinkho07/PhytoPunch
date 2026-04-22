@@ -38,8 +38,6 @@ export const Hero = ({ onShopClick, onLearnMoreClick }) => {
             variants={itemVariants}
             className="text-5xl md:text-6xl font-bold leading-tight"
           >
-            <span className="text-kombucha-berry">Phyto Punch</span>
-            <br />
             <span className="text-kombucha-green">Kombucha Gummies</span>
           </motion.h1>
 
