@@ -6,8 +6,8 @@ export const FAQ = () => {
 
   const faqs = [
     {
-      question: '🛒 Where can I buy Our Gummies?',
-      answer: 'Our Gummies are available through multiple channels for your convenience: our official website, Shopee, Lazada, TikTok Shop, Watsons Malaysia, and Guardian Malaysia. Find the option that works best for you!',
+      question: '🛒 Where can I buy our gummies?',
+      answer: 'Our gummies are available through multiple channels for your convenience: our official website, Shopee, Lazada, TikTok Shop, Watsons Malaysia, and Guardian Malaysia. Find the option that works best for you!',
     },
     {
       question: '📦 What are the shipping and delivery times?',
@@ -18,20 +18,20 @@ export const FAQ = () => {
       answer: 'We accept multiple payment options for your convenience: Credit/Debit cards, Online Banking, and E-wallets. Choose whichever payment method is most convenient for you at checkout.',
     },
     {
-      question: '🏠 How should I store Our Gummies?',
+      question: '🏠 How should I store our gummies?',
       answer: 'Store our gummies in a cool, dry place away from direct sunlight. This ensures optimal freshness and potency. While they don\'t require refrigeration, keeping them in a cool environment extends shelf life.',
     },
     {
       question: '⚠️ Are there any side effects I should know about?',
-      answer: 'Our Gummies are safe as directed. Excessive intake may cause mild digestive discomfort in some individuals. If you are pregnant or have specific health concerns, we recommend consulting a healthcare professional before use.',
+      answer: 'Our gummies are safe as directed. Excessive intake may cause mild digestive discomfort in some individuals. If you are pregnant or have specific health concerns, we recommend consulting a healthcare professional before use.',
     },
     {
-      question: '💊 Can I take Our Gummies with other supplements?',
-      answer: 'Yes, Our Gummies can generally be taken with other supplements. However, be mindful of overlapping ingredients to avoid exceeding recommended daily values. When in doubt, consult your healthcare provider or contact us for specific guidance.',
+      question: '💊 Can I take our gummies with other supplements?',
+      answer: 'Yes, our gummies can generally be taken with other supplements. However, be mindful of overlapping ingredients to avoid exceeding recommended daily values. When in doubt, consult your healthcare provider or contact us for specific guidance.',
     },
     {
       question: '📞 How can I contact customer support?',
-      answer: 'We\'re here to help! Reach out to us via Email at support@phytopunch.com or connect with us on Instagram @PhytoPunchCo. Our wellness team is ready to answer any questions about Our Gummies.',
+      answer: 'We\'re here to help! Reach out to us via Email at support@phytopunch.com or connect with us on Instagram @PhytoPunchCo. Our wellness team is ready to answer any questions about our gummies.',
     },
     {
       question: '❓ Do you have a FAQ for product details?',
@@ -60,7 +60,7 @@ export const FAQ = () => {
             <span className="text-kombucha-green">Questions</span>
           </h2>
           <p className="text-gray-600 text-lg">
-            Got questions? We've got answers. Here's everything you need to know about Our Gummies.
+            Got questions? We've got answers. Here's everything you need to know about our gummies.
           </p>
         </motion.div>
 
