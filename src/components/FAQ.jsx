@@ -6,7 +6,7 @@ export const FAQ = () => {
 
   const faqs = [
     {
-      question: '🛒 Where can I buy our gummies?',
+      question: '🛒 Where are our gummies available?',
       answer: 'Our gummies are available through multiple channels for your convenience: our official website, Shopee, Lazada, TikTok Shop, Watsons Malaysia, and Guardian Malaysia. Find the option that works best for you!',
     },
     {

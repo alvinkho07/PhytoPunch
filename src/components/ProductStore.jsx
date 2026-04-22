@@ -38,9 +38,9 @@ export const ProductStore = () => {
     },
     {
       id: 4,
-      name: 'Berry Immune',
-      description: 'Blackberry & blueberry superblend with extra probiotics',
-      image: '🫐',
+      name: 'Orange Vitality',
+      description: 'Zesty orange with vitamin C boost and immune support',
+      image: '🍊',
       isImageFile: false,
       price: 24.99,
       available: false,
