@@ -6,28 +6,28 @@ import Logo from '../img/Logo.png'
 export const About = () => {
   const milestones = [
     {
-      year: '2023',
-      event: 'Company founded by a group of university students',
-      storyDescription: 'A passion project born in a university lab where four food science students discovered the perfect formula for fermented gummies. Working late nights between classes, they perfected their first batch of kombucha-based gummies.',
-      highlights: ['Lab Discovery', 'First Recipe', 'Founder Team'],
-    },
-    {
       year: '2024',
-      event: 'Official product release',
-      storyDescription: 'After months of rigorous testing and refinement, Phyto Punch officially launched their flagship Grape Kombucha Gummies to the market. The initial production run sold out in just 3 weeks!',
-      highlights: ['Market Launch', 'Sold Out', 'First Customers'],
+      event: 'The Idea Takes Shape',
+      storyDescription: 'PhytoPunch Co. was founded by a group of university students aiming to create functional snacks that combine health benefits with enjoyable flavors, responding to the growing demand for better-for-you alternatives.',
+      highlights: ['Concept Development', 'Functional Snacks', 'Market Insight'],
     },
     {
-      year: '2025',
-      event: 'Won a regional food innovation award',
-      storyDescription: 'Recognized for their innovative approach to functional confectionery, the team received prestigious awards from multiple regional organizations. This validation sparked expansion plans and attracted industry partnerships.',
-      highlights: ['Award Winner', 'Industry Recognition', 'New Partnerships'],
+      year: 'Early 2025',
+      event: 'Experimentation & Prototyping',
+      storyDescription: 'Early gummy formulations were developed and tested, focusing on achieving the right balance of texture, flavor, and the incorporation of functional ingredients such as kombucha.',
+      highlights: ['Prototyping', 'Formulation', 'Innovation'],
+    },
+    {
+      year: 'Late 2025',
+      event: 'First Product Launch',
+      storyDescription: 'The first product — a grape-flavoured kombucha gummy — was introduced through small-scale campus distribution to gather initial consumer feedback.',
+      highlights: ['Grape Kombucha', 'Product Debut', 'Market Testing'],
     },
     {
       year: '2026',
-      event: 'Expanding flavor varieties and new product launches',
-      storyDescription: 'Building on their success, Phyto Punch is expanding with new flavors and complementary products. The team is now working on tropical, berry, and herbal blends to meet growing demand.',
-      highlights: ['New Flavors', 'Product Line', 'Growth Phase'],
+      event: 'Refinement & Expansion',
+      storyDescription: 'Building on early feedback, the product is being refined while new flavors and concepts are explored to expand market reach and strengthen brand presence.',
+      highlights: ['Product Improvement', 'New Flavors', 'Growth Phase'],
     },
   ]
 
@@ -102,7 +102,7 @@ export const About = () => {
           viewport={{ once: true }}
         >
           <h3 className="text-3xl font-bold text-kombucha-berry mb-12 text-center">Our Journey</h3>
-          <p className="text-center text-gray-600 mb-8">Click on each milestone to discover our story</p>
+          <p className="text-center text-gray-600 mb-8">From a student idea to a growing functional snack brand – here's our journey so far.</p>
           <ExpandableTimeline milestones={milestones} />
         </motion.div>
 
