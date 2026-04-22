@@ -6,7 +6,7 @@ A sleek, minimalist single-page application for Phyto Punch Co., a premium kombu
 
 - **Lightning-fast builds** with Vite and optimized for GitHub Pages
 - **Smooth frame-by-frame animations** using Framer Motion
-- **Responsive design** with organic, earthy color palette
+- **Responsive design** with natural, earthy color palette
 - **Full e-commerce functionality**:
   - Product showcase with 3 pack sizes (Small, Medium, Large)
   - Real-time shopping cart with CRUD operations
