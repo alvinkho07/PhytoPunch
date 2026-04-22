@@ -17,14 +17,14 @@ export const ProductStore = () => {
       available: true,
     },
     {
-      id: 2,
+      id: 4,
       name: 'Strawberry Bliss',
       description: 'Tangy strawberry with kombucha cultures and vitamin C boost',
       image: '🍓',
       isImageFile: false,
       price: 24.99,
       available: false,
-      releaseDate: 'Q2 2026',
+      releaseDate: 'Q3 2026',
     },
     {
       id: 3,
@@ -37,14 +37,14 @@ export const ProductStore = () => {
       releaseDate: 'Q3 2026',
     },
     {
-      id: 4,
+      id: 2,
       name: 'Orange Vitality',
       description: 'Zesty orange with vitamin C boost and immune support',
       image: '🍊',
       isImageFile: false,
       price: 24.99,
       available: false,
-      releaseDate: 'Q3 2026',
+      releaseDate: 'Q2 2026',
     },
     {
       id: 5,
